@@ -18,7 +18,7 @@ import VideoCallModal from "./miscellaneous/VideoCallModal";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
-const ENDPOINT = "http://localhost:5001";
+const ENDPOINT = "https://themesis-guardian.onrender.com";
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
@@ -47,7 +47,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       setLoading(true);
 
       const { data } = await axios.get(
-        `http://127.0.0.1:5001/api/v1/messages/${selectedChat._id}`,
+        `https://themesis-guardian.onrender.com/api/v1/messages/${selectedChat._id}`,
         config
       );
 
@@ -72,7 +72,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
 
         setNewMessages("");
         const { data } = await axios.post(
-          "http://127.0.0.1:5001/api/v1/messages",
+          "https://themesis-guardian.onrender.com/api/v1/messages",
           {
             content: newMessages,
             chatId: selectedChat._id,
@@ -155,7 +155,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                             JSON.parse(user.user).name,
                             selectedChat.users
                           ).image
-                        : `http://localhost:5001/uploads/${
+                        : `https://themesis-guardian.onrender.com/uploads/${
                             getSender(
                               JSON.parse(user.user).name,
                               selectedChat.users

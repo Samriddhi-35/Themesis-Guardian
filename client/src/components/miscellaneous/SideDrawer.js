@@ -39,7 +39,7 @@ const SideDrawer = () => {
         jwt: getCookies("jwt"),
       };
       const response = await fetch(
-        `http://127.0.0.1:5001/api/v1/chats/getChats?search=${search}`,
+        `https://themesis-guardian.onrender.com/api/v1/chats/getChats?search=${search}`,
         {
           method: "get",
           headers: {
@@ -73,7 +73,7 @@ const SideDrawer = () => {
       };
 
       const { data } = await axios.post(
-        "http://127.0.0.1:5001/api/v1/chats",
+        "https://themesis-guardian.onrender.com/api/v1/chats",
         { userId },
         config
       );

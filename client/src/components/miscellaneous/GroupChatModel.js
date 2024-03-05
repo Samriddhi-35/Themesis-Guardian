@@ -45,7 +45,7 @@ const GroupChatModel = ({children}) => {
             },
         }
         console.log("search", search);
-        const {data} = await axios.get(`http://127.0.0.1:5001/api/v1/users/searchUsers?search=${search}`, config);
+        const {data} = await axios.get(`https://themesis-guardian.onrender.com/api/v1/users/searchUsers?search=${search}`, config);
         console.log("data", data);
         setSearchResult(data);
         setLoading(false);
@@ -71,7 +71,7 @@ const GroupChatModel = ({children}) => {
             },
         }
 
-        const {data} = await axios.post("http://127.0.0.1:5001/api/v1/chats/group", {
+        const {data} = await axios.post("https://themesis-guardian.onrender.com/api/v1/chats/group", {
             name : groupChatName,
             users : JSON.stringify(selectedUser.map((u) => u._id)),
         }, config);

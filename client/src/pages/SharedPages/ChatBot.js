@@ -90,7 +90,7 @@ function ChatBot() {
 						<img
 							src={
 								entity === "user"
-									? `http://localhost:5001/uploads/${JSON.parse(user.user).image}`
+									? `https://themesis-guardian.onrender.com/uploads/${JSON.parse(user.user).image}`
 									: botChats[entity].icon
 							}
 							alt="bot-icon"

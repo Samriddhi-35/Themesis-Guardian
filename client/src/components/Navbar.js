@@ -49,7 +49,7 @@ function Navbar() {
               <Link to="/me" className="nav-link links">
                   <div className="profileHolder" style ={{borderRadius: "50%", height: "2.3rem", width : "2.3rem", margin : "auto"}}>
                     <img style ={{height: "100%", width : "100%", borderRadius: "50%", overflow:"hidden"}}
-        src = {JSON.parse(user.user).image === "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg" ? JSON.parse(user.user).image : `http://localhost:5001/uploads/${JSON.parse(user.user).image}`}
+        src = {JSON.parse(user.user).image === "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg" ? JSON.parse(user.user).image : `https://themesis-guardian.onrender.com/uploads/${JSON.parse(user.user).image}`}
         />
                   </div>
               </Link>

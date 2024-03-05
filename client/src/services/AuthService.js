@@ -25,7 +25,6 @@ export const AuthWrapper = () => {
 
 
   const checkProtected = async() => {
-    
     if(getCookies("jwt") === undefined){
       setUser({user : "", isAuthenticated: false});
       return;
@@ -35,7 +34,7 @@ export const AuthWrapper = () => {
     }
 
     try{
-    const response = await fetch("http://127.0.0.1:5001/api/v1/users/isLoggedIn", {
+    const response = await fetch("https://themesis-guardian.onrender.com/api/v1/users/isLoggedIn", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -63,7 +62,7 @@ export const AuthWrapper = () => {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:5001/api/v1/users/updateMe",
+        "https://themesis-guardian.onrender.com/api/v1/users/updateMe",
         {
           method: "PATCH",
           headers: {
@@ -100,7 +99,7 @@ export const AuthWrapper = () => {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:5001/api/v1/users/updatePassword",
+        "https://themesis-guardian.onrender.com/api/v1/users/updatePassword",
         {
           method: "PATCH",
           headers: {
@@ -136,7 +135,7 @@ export const AuthWrapper = () => {
     };
 
     try {
-      const response = await fetch("http://127.0.0.1:5001/api/v1/users/login", {
+      const response = await fetch("https://themesis-guardian.onrender.com/api/v1/users/login", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -153,6 +152,7 @@ export const AuthWrapper = () => {
                 user: JSON.stringify(data.data.user),
                 isAuthenticated: true,
               });
+              console.log(user);
               setCookies("jwt", tken);
               if (data.data.user.role === "user") {
                 navigate("/dashboard");

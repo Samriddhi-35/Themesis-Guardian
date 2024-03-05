@@ -24,7 +24,7 @@ function RequestsPage() {
 	const [numRequests, setNumRequests] = useState(-1);
 	const getAllRequests = async () => {
 		const response = await fetch(
-			"http://127.0.0.1:5001/api/v1/requests/lawyerRequests/" +
+			"https://themesis-guardian.onrender.com/api/v1/requests/lawyerRequests/" +
 				JSON.parse(user.user)._id,
 			{
 				method: "get",
@@ -101,7 +101,7 @@ function RequestsPage() {
 	const acceptRequest = async (id) => {
 		console.log("acp:", id);
 		const response = await fetch(
-			"http://127.0.0.1:5001/api/v1/requests/acceptRequest/" + id,
+			"https://themesis-guardian.onrender.com/api/v1/requests/acceptRequest/" + id,
 			{
 				method: "PATCH",
 				headers: {
@@ -118,7 +118,7 @@ function RequestsPage() {
 	};
 	const rejectRequest = async (id) => {
 		const response = await fetch(
-			"http://127.0.0.1:5001/api/v1/requests/rejectRequest/" + id,
+			"https://themesis-guardian.onrender.com/api/v1/requests/rejectRequest/" + id,
 			{
 				method: "PATCH",
 				headers: {
@@ -135,7 +135,7 @@ function RequestsPage() {
 
 	const deleteRequest = async (id) => {
 		const response = await fetch(
-			"http://127.0.0.1:5001/api/v1/requests/deleteRequest/" + id,
+			"https://themesis-guardian.onrender.com/api/v1/requests/deleteRequest/" + id,
 			{
 				method: "delete",
 				headers: {
@@ -152,7 +152,7 @@ function RequestsPage() {
 
 	const revokeRequest = async (id) => {
 		const response = await fetch(
-			"http://127.0.0.1:5001/api/v1/requests/revokeRequest/" + id,
+			"https://themesis-guardian.onrender.com/api/v1/requests/revokeRequest/" + id,
 			{
 				method: "PATCH",
 				headers: {

@@ -26,7 +26,7 @@ function PeerconnectChat() {
 	}, [usersChats, message]);
 
 	const getMsgs = async () => {
-		fetch("http://localhost:5001/api/v1/discord/getMessages", {
+		fetch("https://themesis-guardian.onrender.com/api/v1/discord/getMessages", {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",
@@ -58,7 +58,7 @@ function PeerconnectChat() {
 	}, []);
 	var socket;
 	useEffect(() => {
-		socket = io("http://localhost:5001");
+		socket = io("https://themesis-guardian.onrender.com");
 		socket.emit("setup", {
 			_id: JSON.parse(user.user)._id,
 		});
@@ -84,12 +84,12 @@ function PeerconnectChat() {
 		console.log("Message Received");
 		newMessageReceived.chat = await fetchDiscord();
 		console.log("after everything", newMessageReceived);
-		const socket = io("http://localhost:5001");
+		const socket = io("https://themesis-guardian.onrender.com");
 		socket.emit("new message", newMessageReceived);
 		getMsgs();
 	};
 	const submitForm = async () => {
-		await fetch("http://localhost:5001/api/v1/discord/sendMessage", {
+		await fetch("https://themesis-guardian.onrender.com/api/v1/discord/sendMessage", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

@@ -23,7 +23,7 @@ function ForgotPw() {
 
 		try {
 			const response = await fetch(
-				"http://localhost:5001/api/v1/users/forgotPassword",
+				"https://themesis-guardian.onrender.com/api/v1/users/forgotPassword",
 				{
 					method: "post",
 					headers: {

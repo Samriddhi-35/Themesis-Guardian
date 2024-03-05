@@ -21,7 +21,7 @@ function FindLawyer() {
 	useEffect(() => {
 		const fetchLawyers = async () => {
 			const response = await fetch(
-				"http://127.0.0.1:5001/api/v1/users/getLawyers",
+				"https://themesis-guardian.onrender.com/api/v1/users/getLawyers",
 				{
 					method: "get",
 					headers: {
@@ -58,7 +58,7 @@ function FindLawyer() {
 		console.log(user.user);
 		console.log("calling", JSON.parse(user.user)._id);
 		const response = await fetch(
-			"http://127.0.0.1:5001/api/v1/requests/userRequests/" +
+			"https://themesis-guardian.onrender.com/api/v1/requests/userRequests/" +
 				JSON.parse(user.user)._id,
 			{
 				method: "get",
@@ -89,7 +89,7 @@ function FindLawyer() {
 		};
 		try {
 			const response = await fetch(
-				"http://127.0.0.1:5001/api/v1/requests/createRequest",
+				"https://themesis-guardian.onrender.com/api/v1/requests/createRequest",
 				{
 					method: "POST",
 					headers: {
@@ -128,7 +128,7 @@ function FindLawyer() {
 		)[0];
 		try {
 			const response = await fetch(
-				`http://127.0.0.1:5001/api/v1/requests/deleteRequest/${request._id}`,
+				`https://themesis-guardian.onrender.com/api/v1/requests/deleteRequest/${request._id}`,
 				{
 					method: "DELETE",
 					headers: {

@@ -34,7 +34,7 @@ const MyChats = ({ fetchAgain }) => {
 			};
 
 			const { data } = await axios.get(
-				"http://127.0.0.1:5001/api/v1/chats",
+				"https://themesis-guardian.onrender.com/api/v1/chats",
 				config
 			);
 			setChats(data);
@@ -56,7 +56,7 @@ const MyChats = ({ fetchAgain }) => {
 		if (e.key === "Enter") {
 			try {
 				const { data } = await axios.get(
-					`http://127.0.0.1:5001/api/v1/users/getChats?search=${search}`
+					`https://themesis-guardian.onrender.com/api/v1/users/getChats?search=${search}`
 				);
 				console.log("search value", data);
 				setSearchResults(data);
